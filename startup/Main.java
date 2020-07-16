@@ -1,4 +1,4 @@
-package Main;
+package startup;
 
 
 import javafx.application.Application;

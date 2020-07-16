@@ -7,6 +7,7 @@ public class SnackBar {
     ArrayList<Snack> snacks;
 
     public SnackBar(String string) {
+        naam = string;
     }
 
     public String getNaam() {

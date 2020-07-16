@@ -36,13 +36,31 @@ def fill_leiding_table():
         leider = line[:-1].split()
         print(leider)
         generate_insert_leiding_statement(leider, conn)
+        
+def addbar(bar, connection):
+    cursor = connection.cursor()
+    statement = "INSERT INTO snackbar VALUES ('{}')".format(bar)
+    cursor.execute(statement)
+    connection.commit()
+    return 0
+
+def fill_test_bar(con):
+    file = open("src/python_parts/database_setup/test_snackbars.csv", "r")
+    for line in file:
+        bar = line[:-1]
+        print(bar)
+        addbar(bar, con)
 
 
 
 
-curs = conn.cursor()
-initiate_leiding_table(conn)
-fill_leiding_table()
 
-initiate_snack_table(conn)
-initiate_snackbar_table(conn)
+
+#curs = conn.cursor()
+#initiate_leiding_table(conn)
+#fill_leiding_table()
+
+#initiate_snack_table(conn)
+#initiate_snackbar_table(conn)
+
+fill_test_bar(conn)

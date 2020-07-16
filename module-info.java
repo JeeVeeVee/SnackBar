@@ -6,6 +6,7 @@ module SnackBar {
     requires java.sql;
     requires java.desktop;
 
-    exports Main to javafx.graphics, javafx.fxml;
-
+    exports startup to javafx.graphics, javafx.fxml;
+    exports kiesSnackBar to javafx.graphics, javafx.fxml;
+    opens kiesSnackBar;
 }
