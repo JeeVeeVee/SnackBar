@@ -44,23 +44,38 @@ def addbar(bar, connection):
     connection.commit()
     return 0
 
+def add_snack(bar, connection, snack):
+    cursor = connection.cursor()
+    statement = "INSERT INTO snack VALUES ('{}', '{}', {})".format(snack[0], bar, snack[1])
+    print(statement)
+    cursor.execute(statement)
+    connection.commit()
+
 def fill_test_bar(con):
     file = open("src/python_parts/database_setup/test_snackbars.csv", "r")
     for line in file:
         bar = line[:-1]
-        print(bar)
         addbar(bar, con)
 
+# important, bar is a string 
+def fill_test_snacks_for_njam_njam(conn, bar):
+        file = open("src/python_parts/database_setup/njam_njam_snacks.csv", "r")
+        for line in file: 
+            snack = line[:-1].split("\t")
+            add_snack("njam njam", conn, snack)
 
 
 
 
 
-#curs = conn.cursor()
-#initiate_leiding_table(conn)
-#fill_leiding_table()
 
-#initiate_snack_table(conn)
-#initiate_snackbar_table(conn)
 
+
+curs = conn.cursor()
+initiate_leiding_table(conn)
+fill_leiding_table()
+
+initiate_snack_table(conn)
+initiate_snackbar_table(conn)
 fill_test_bar(conn)
+fill_test_snacks_for_njam_njam(conn, "njam njam")

@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class KiesSnackBarSchermController {
     public Button zoekButton;
     public Button nieuweBarButton;
+    public Button bestelButton;
     public TextField zoekterm;
     public ChoiceBox<String> allBars;
 

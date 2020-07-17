@@ -6,12 +6,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="167.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane prefHeight="167.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kiesSnackBar.KiesSnackBarSchermController">
    <children>
       <TextField fx:id="zoekterm" layoutX="115.0" layoutY="28.0" prefHeight="26.0" prefWidth="211.0" />
-      <ChoiceBox fx:id="allBars" layoutX="363.0" layoutY="28.0" prefHeight="26.0" prefWidth="223.0" />
-      <Button fx:id="nieuweBarButton" layoutX="192.0" layoutY="104.0" mnemonicParsing="false" text="nieuwe snackbar">
+      <ChoiceBox fx:id="alleBars" layoutX="363.0" layoutY="28.0" prefHeight="26.0" prefWidth="223.0" />
+      <Button fx:id="nieuweBarButton" layoutX="23.0" layoutY="99.0" mnemonicParsing="false" text="nieuwe snackbar">
          <font>
             <Font size="22.0" />
          </font>
@@ -19,6 +18,11 @@
       <Button fx:id="zoekButton" layoutX="23.0" layoutY="22.0" mnemonicParsing="false" text="zoek">
          <font>
             <Font size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="bestelButton" layoutX="409.0" layoutY="99.0" mnemonicParsing="false" text="bestellen">
+         <font>
+            <Font size="22.0" />
          </font>
       </Button>
    </children>
