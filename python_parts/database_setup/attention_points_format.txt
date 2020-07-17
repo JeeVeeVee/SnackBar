@@ -1,0 +1,7 @@
+1) turn all , in .
+2) delete all ' signs
+3) add "klein", "medium" and "groot"
+4) some handy sed's: 
+    cat njam_njam.csv | egrep "7.50" | egrep "Pizza" | sed "s/\(.*\)/Kleine \1/"
+    cat njam_njam.csv | sed "s/€ \([0-9]*\)\(.*\)/\2\t\1/"
+5) work with a seperate temporarily file to store your progress (in case you f*ck up)
