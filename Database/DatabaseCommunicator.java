@@ -16,7 +16,7 @@ public class DatabaseCommunicator {
 
 
     /*
-    deze functie haalt alle snacks van de database van 1 bepaalde database en geeft ze terug in een arraylist.
+    deze functie haalt alle snacks van de database van 1 bepaalde snackbar en geeft ze terug in een arraylist.
     */
     public ArrayList<Snack> getSnacksFromSnackBar(SnackBar snackBar) {
         ArrayList<Snack> output = new ArrayList<>();
@@ -54,6 +54,23 @@ public class DatabaseCommunicator {
         return output;
     }
 
+    /*
+    * Fetches all leiding from the database
+    */
+    public ArrayList<Leider> getAllLeiders(){
+        ArrayList<Leider> output = new ArrayList<>();
+        try {
+            PreparedStatement ps = connection.prepareStatement("SELECT * FROM leiding");
+            ResultSet set = ps.executeQuery();
+            while (set.next()) {
+                Leider verscheLeider = new Leider(set.getString(1), set.getString(2), set.getDouble(3));
+                output.add(verscheLeider);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return output;
+    }
 
     public void addNewSnackBar(SnackBar snackBar){
         try{

@@ -22,4 +22,12 @@ public class Leider {
     public String getLast() {
         return last;
     }
+
+    @Override
+    public String toString() {
+        return "Leider{" +
+                "first='" + first + '\'' +
+                ", last='" + last + '\'' +
+                '}';
+    }
 }
