@@ -13,16 +13,22 @@ public class Besteller extends Application {
 
     private SnackBar snackBar;
 
+    public Besteller(){
+
+    }
+
     public Besteller(SnackBar snackBar){
         this.snackBar = snackBar;
     }
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("besteller.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("test.fxml"));
+        /*
         ConnectionProvider connectionProvider = new ConnectionProvider();
         BestelControlla bestelControlla = new BestelControlla(connectionProvider.getConnection());
         loader.setController(bestelControlla);
+         */
         Parent root = loader.load();
         stage.setTitle("MyTabb");
         stage.setScene(new Scene(root, 615, 250));
