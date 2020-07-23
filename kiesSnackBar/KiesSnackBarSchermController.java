@@ -1,8 +1,7 @@
 package kiesSnackBar;
 
-import Database.ConnectionProvider;
-import Database.DatabaseCommunicator;
-import Database.SnackBar;
+import databaseAcces.DatabaseCommunicator;
+import databaseAcces.SnackBar;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Button;

@@ -1,8 +1,7 @@
 package besteller;
 
-import Database.ConnectionProvider;
-import Database.DatabaseCommunicator;
-import Database.Leider;
+import databaseAcces.DatabaseCommunicator;
+import databaseAcces.Leider;
 
 import java.sql.Connection;
 import java.util.ArrayList;

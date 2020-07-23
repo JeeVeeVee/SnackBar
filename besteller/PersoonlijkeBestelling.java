@@ -1,8 +1,7 @@
 package besteller;
 
-import Database.Leider;
-import Database.Snack;
-import Database.SnackBar;
+import databaseAcces.Leider;
+import databaseAcces.Snack;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;

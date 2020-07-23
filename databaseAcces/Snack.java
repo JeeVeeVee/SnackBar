@@ -1,4 +1,4 @@
-package Database;
+package databaseAcces;
 
 public class Snack {
     private String naam;

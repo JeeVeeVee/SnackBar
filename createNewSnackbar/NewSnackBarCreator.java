@@ -1,6 +1,6 @@
 package createNewSnackbar;
 
-import Database.ConnectionProvider;
+import databaseAcces.ConnectionProvider;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

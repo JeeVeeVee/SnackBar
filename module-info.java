@@ -9,6 +9,9 @@ module SnackBar {
     exports startup to javafx.graphics, javafx.fxml;
     exports kiesSnackBar to javafx.graphics, javafx.fxml;
     exports besteller to javafx.graphics, javafx.fxml;
+    exports kiesDeelnemers to javafx.graphics, javafx.fxml;
     opens kiesSnackBar;
     opens besteller;
+    opens kiesDeelnemers;
+    opens databaseAcces;
 }

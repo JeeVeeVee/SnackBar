@@ -1,27 +1,15 @@
-package besteller;
+package kiesDeelnemers;
 
-import databaseAcces.SnackBar;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Besteller extends Application {
-
-    private SnackBar snackBar;
-
-    public Besteller(){
-
-    }
-
-    public Besteller(SnackBar snackBar){
-        this.snackBar = snackBar;
-    }
-
+public class KiesDeelnemers extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("test.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("kiesDeelnemers.fxml"));
         /*
         ConnectionProvider connectionProvider = new ConnectionProvider();
         BestelControlla bestelControlla = new BestelControlla(connectionProvider.getConnection());
@@ -29,7 +17,7 @@ public class Besteller extends Application {
          */
         Parent root = loader.load();
         stage.setTitle("MyTabb");
-        stage.setScene(new Scene(root, 615, 250));
+        stage.setScene(new Scene(root, 615, 650));
         stage.show();
     }
 }

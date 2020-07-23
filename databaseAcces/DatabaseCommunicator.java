@@ -1,6 +1,5 @@
-package Database;
+package databaseAcces;
 
-import javax.net.ssl.SNIHostName;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

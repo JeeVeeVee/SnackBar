@@ -1,14 +1,11 @@
 package kiesSnackBar;
 
-import Database.ConnectionProvider;
-import Database.DatabaseCommunicator;
+import databaseAcces.ConnectionProvider;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.sql.Connection;
 
 public class Kiezer extends Application {
     @Override
