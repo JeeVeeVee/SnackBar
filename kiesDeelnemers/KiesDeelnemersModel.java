@@ -8,6 +8,10 @@ public class KiesDeelnemersModel {
     public ArrayList<Deelnemer> deelnemers;
     public ArrayList<Listener> listeners;
 
+    public KiesDeelnemersModel(ArrayList<Deelnemer> deelnemers){
+        this.deelnemers = deelnemers;
+    }
+
     public void alertListeners(){
         for (Listener listener : listeners){
             listener.listen();

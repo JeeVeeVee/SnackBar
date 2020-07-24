@@ -26,23 +26,28 @@ public class  KiesDeelnemersControlla {
 
     private DatabaseCommunicator databaseCommunicator;
     private ArrayList<Leider> leiders;
+    private ArrayList<Deelnemer> deelnemers;
+    private KiesDeelnemersModel model;
 
     public KiesDeelnemersControlla(){
         ConnectionProvider cp = new ConnectionProvider();
         databaseCommunicator = new DatabaseCommunicator(cp.getConnection());
         leiders = databaseCommunicator.getAllLeiders();
+        deelnemers = new ArrayList<>();
+        leiders.forEach(leider -> deelnemers.add(new Deelnemer(leider)));
+        this.model = new KiesDeelnemersModel(deelnemers);
     }
 
     public void initialize(){
-        ObservableList<Deelnemer> model = FXCollections.observableArrayList();
+        ObservableList<Deelnemer> deelnemerObservableList = FXCollections.observableArrayList();
         for (Leider leider : leiders){
-            model.add(new Deelnemer(leider));
+            deelnemerObservableList.add(new Deelnemer(leider));
         }
-        tabel.setItems(model);
+        tabel.setItems(deelnemerObservableList);
         deelnemer.setCellValueFactory(deelnemer -> new ReadOnlyStringWrapper(deelnemer.getValue().getLeider().getFullName()));
         check.setCellValueFactory(deelnemer -> new ReadOnlyBooleanWrapper(deelnemer.getValue().neemtDeel()));
         check.setCellFactory(column -> {
-            TableCell output = new CheckBoxTableCell<>();
+            TableCell output = new CheckCell(this.model);
             output.setEditable(true);
             return output;
         });
