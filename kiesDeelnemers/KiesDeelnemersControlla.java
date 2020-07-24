@@ -41,6 +41,11 @@ public class  KiesDeelnemersControlla {
         tabel.setItems(model);
         deelnemer.setCellValueFactory(deelnemer -> new ReadOnlyStringWrapper(deelnemer.getValue().getLeider().getFullName()));
         check.setCellValueFactory(deelnemer -> new ReadOnlyBooleanWrapper(deelnemer.getValue().neemtDeel()));
-        check.setCellFactory(column -> new CheckBoxTableCell<>());
+        check.setCellFactory(column -> {
+            TableCell output = new CheckBoxTableCell<>();
+            output.setEditable(true);
+            return output;
+        });
+        check.setEditable(true);
     }
 }

@@ -1,20 +1,27 @@
 package kiesDeelnemers;
 
-import databaseAcces.Leider;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableCell;
 
-public class CheckCell extends TableCell<Deelnemer, Boolean> {
+public class CheckCell extends TableCell<Deelnemer, Boolean> implements Listener{
 
     private boolean neemtDeel;
     private Deelnemer deelnemer;
+    private KiesDeelnemersModel model;
 
+    public CheckCell(KiesDeelnemersModel model){
+        CheckButton button = new CheckButton(model, getDeelnemer());
+        super.getChildren().add(button);
+        super.setGraphic(button);
+        this.model = model;
+    }
 
+    public Deelnemer getDeelnemer(){
+        return super.getTableRow().getItem();
+    }
 
-    public CheckCell(){
-        CheckBox checkBox = new CheckBox();
-        super.getChildren().add(checkBox);
-        super.setGraphic(checkBox);
-        //deelnemer = super.getTableRow().getItem();
+    @Override
+    public void listen() {
+
     }
 }
