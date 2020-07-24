@@ -11,7 +11,7 @@ public class CheckCell extends TableCell<Deelnemer, Boolean> implements Listener
     private KiesDeelnemersModel model;
 
     public CheckCell(KiesDeelnemersModel model){
-        CheckButton button = new CheckButton(model, new Deelnemer(new Leider("Jules", "Vervaeke", 0.1)));
+        CheckButton button = new CheckButton(model);
         super.getChildren().add(button);
         super.setGraphic(button);
         this.model = model;

@@ -10,12 +10,17 @@ public class KiesDeelnemersModel {
 
     public KiesDeelnemersModel(ArrayList<Deelnemer> deelnemers){
         this.deelnemers = deelnemers;
+        listeners = new ArrayList<>();
     }
 
     public void alertListeners(){
         for (Listener listener : listeners){
             listener.listen();
         }
+    }
+
+    public void registerListener(Listener listener){
+        listeners.add(listener);
     }
 
     public ArrayList<Leider> getLeiders(){
@@ -34,5 +39,14 @@ public class KiesDeelnemersModel {
             }
         });
         return output;
+    }
+
+    public void setOnDeelnemen(Leider leider){
+        for (Deelnemer deelnemer : this.deelnemers){
+            if (deelnemer.getLeider() == leider){
+                deelnemer.toggleNeemtDeel();
+            }
+        }
+        alertListeners();
     }
 }
