@@ -1,6 +1,6 @@
 package databaseAcces;
 
-public class Leider {
+public class Leider implements Comparable<Leider> {
     private String first;
     private String last;
     private String fullName;
@@ -35,5 +35,14 @@ public class Leider {
                 "first='" + first + '\'' +
                 ", last='" + last + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Leider o) {
+        if(o.getFullName() == this.getFullName()){
+            return 0;
+        } else {
+            return 1;
+        }
     }
 }

@@ -1,5 +1,6 @@
 package kiesDeelnemers;
 
+import databaseAcces.Leider;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableCell;
 
@@ -10,14 +11,18 @@ public class CheckCell extends TableCell<Deelnemer, Boolean> implements Listener
     private KiesDeelnemersModel model;
 
     public CheckCell(KiesDeelnemersModel model){
-        CheckButton button = new CheckButton(model, getDeelnemer());
+        CheckButton button = new CheckButton(model);
         super.getChildren().add(button);
         super.setGraphic(button);
         this.model = model;
     }
 
-    public Deelnemer getDeelnemer(){
-        return super.getTableRow().getItem();
+    public Deelnemer getDeelnemer() {
+        if (super.getTableRow().getItem() != null){
+            return super.getTableRow().getItem();
+        } else {
+            return new Deelnemer(new Leider("Jules", "Vervaeke", 0.1));
+        }
     }
 
     @Override
