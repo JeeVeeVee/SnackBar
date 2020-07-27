@@ -2,7 +2,6 @@ package kiesDeelnemers;
 
 import databaseAcces.Leider;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class CheckButton extends Button implements Listener {
