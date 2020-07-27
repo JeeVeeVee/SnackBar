@@ -12,10 +12,7 @@ public class NewSnackBarCreator extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("kiesSnackBarScherm.fxml"));
-        ConnectionProvider connectionProvider = new ConnectionProvider();
-        KiesSnackBarSchermController controlla = new KiesSnackBarSchermController(connectionProvider.getConnection());
-        loader.setController(controlla);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("newSnackBarScherm.fxml"));
         Parent root = loader.load();
         stage.setTitle("SNACKBAR");
         stage.setScene(new Scene(root, 600, 200));

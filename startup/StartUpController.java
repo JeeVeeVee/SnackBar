@@ -11,7 +11,7 @@ public class StartUpController {
     public Button bestelButton;
 
 
-    public void initiate(){
+    public void initialize(){
         bestelButton.setOnAction(e -> {
             Kiezer kiezer = new Kiezer();
             try {

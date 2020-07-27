@@ -16,7 +16,7 @@ public class KiesDeelnemers extends Application {
         loader.setController(bestelControlla);
          */
         Parent root = loader.load();
-        stage.setTitle("MyTabb");
+        stage.setTitle("SNACKBAR");
         stage.setScene(new Scene(root, 615, 650));
         stage.show();
     }

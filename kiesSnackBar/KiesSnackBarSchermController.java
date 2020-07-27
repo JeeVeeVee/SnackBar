@@ -1,5 +1,6 @@
 package kiesSnackBar;
 
+import createNewSnackbar.NewSnackBarCreator;
 import databaseAcces.DatabaseCommunicator;
 import databaseAcces.SnackBar;
 import javafx.collections.FXCollections;
@@ -8,6 +9,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import kiesDeelnemers.KiesDeelnemers;
 
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -40,6 +43,24 @@ public class KiesSnackBarSchermController {
         }
         allBars.setItems(model);
         anker.getChildren().add(allBars);
+
+        nieuweBarButton.setOnAction(e -> {
+            NewSnackBarCreator snackBarCreator = new NewSnackBarCreator();
+            try {
+                snackBarCreator.start((Stage) nieuweBarButton.getScene().getWindow());
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+
+        bestelButton.setOnAction(e -> {
+            KiesDeelnemers kiesDeelnemers = new KiesDeelnemers();
+            try {
+                kiesDeelnemers.start((Stage) bestelButton.getScene().getWindow());
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
     }
 
 }
